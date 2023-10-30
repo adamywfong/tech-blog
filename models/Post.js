@@ -3,7 +3,6 @@ const sequelize = require('../config/connection');
 
 class Post extends Model {}
 
-// Code_block is expected to be a section of code that can easily be copied and shared/edited in the comments
 Post.init(
   {
     id: {

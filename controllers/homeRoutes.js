@@ -26,8 +26,6 @@ router.get('/', async (req, res) => {
 
     // Serialize data so the template can read it
     const posts = postData.map((post) => post.get({ plain: true }));
-    // TODO: get data for homepage
-    // THEN: render homepage
     res.render('homepage', { 
       title: 'The Tech Blog',
       posts,
