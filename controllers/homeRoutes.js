@@ -42,7 +42,9 @@ router.get('/login', (req, res) => {
     res.redirect('/dashboard');
     return;
   }
-  res.render('login');
+  res.render('login', { 
+    title: 'The Tech Blog'
+  });
 });
 
 router.get('/dashboard', withAuth, async (req, res) => {
@@ -60,7 +62,8 @@ router.get('/dashboard', withAuth, async (req, res) => {
     res.render('dashboard', {
       title: 'Your Dashboard',
       user,
-      logged_in: req.session.logged_in
+      logged_in: req.session.logged_in,
+      userId: req.session.user_id
     })
     } catch (err) {
       res.status(500).json(err);
