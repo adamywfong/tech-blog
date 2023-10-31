@@ -70,7 +70,7 @@ router.get('/dashboard', withAuth, async (req, res) => {
     }
 });
 
-router.get('/post/:id', withAuth, async (req, res) => {
+router.get('/comments/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
       attributes: {exclude: ['password']},

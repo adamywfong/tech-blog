@@ -9,9 +9,7 @@
 </div>
 {{#each post.comments as |comment|}}
 <div class="card comment">
-  {{comment.text}}
-  {{comment.createdAt}}
-  {{comment.user.name}}
+  <p>{{comment.text}}</p>
+  <p>&#8212{{comment.user.name}}, {{format_date comment.createdAt}}</p>
 </div>
 {{/each}}
-

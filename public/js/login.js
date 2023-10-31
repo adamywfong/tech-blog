@@ -1,48 +1,54 @@
+const loginForm = document.querySelector('#login-form');
+const switcher = document.querySelector('#login-toggle');
+
 const loginFormHandler = async (event) => {
   event.preventDefault();
 
   // Collect values from the login form
   const name = document.querySelector('#name-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
-
-  if (username && password) {
-    // Send a POST request to the API endpoint
-    const response = await fetch('/api/users/login', {
-      method: 'POST',
-      body: JSON.stringify({ name, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      // If successful, redirect the browser to the homepage
-      document.location.replace('/');
+  if (name && password) {
+    if (loginForm.dataset.login == true){
+      const response = await fetch('/api/users/login', {
+        method: 'POST',
+        body: JSON.stringify({ name, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (response.ok) {
+        // If successful, redirect the browser to the homepage
+        document.location.replace('/');
+      } else {
+        alert(response.statusText);
+      }
     } else {
-      alert(response.statusText);
-    }
+      const response = await fetch('/api/users', {
+        method: 'POST',
+        body: JSON.stringify({ name, password }),
+        headers: { 'Content-Type': 'application/json' },
+      });
+      if (response.ok) {
+        // If successful, redirect the browser to the homepage
+        document.location.replace('/');
+      } else {
+        alert(response.statusText);
+      }
+    };
   }
 };
 
-const signupFormHandler = async (event) => {
+const logOrSign = (event) => {
   event.preventDefault();
-
-  const name = document.querySelector('#name-signup').value.trim();
-  const password = document.querySelector('#password-signup').value.trim();
-
-  if (name && email && password) {
-    const response = await fetch('/api/users', {
-      method: 'POST',
-      body: JSON.stringify({ name, password }),
-      headers: { 'Content-Type': 'application/json' },
-    });
-
-    if (response.ok) {
-      document.location.replace('/');
-    } else {
-      alert(response.statusText);
-    }
+  if (loginForm.dataset.login == 'true') {
+    loginForm.dataset.login = false;
+    document.querySelector('#login-header').textContent = 'Sign Up';
+    switcher.textContent = 'Login instead';
+  }  else {
+    loginForm.dataset.login = true;
+    document.querySelector('#login-header').textContent = 'Login';
+    switcher.textContent = 'Sign up instead';
   }
-};
+}
 
-document.querySelector('#login-form').addEventListener('submit', loginFormHandler);
+loginForm.addEventListener('submit', loginFormHandler);
 
-document.querySelector('#signup-form').addEventListener('submit', signupFormHandler);
+switcher.addEventListener('submit', logOrSign);
