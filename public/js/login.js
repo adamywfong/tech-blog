@@ -8,7 +8,7 @@ const loginFormHandler = async (event) => {
   const name = document.querySelector('#name-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();
   if (name && password) {
-    if (loginForm.dataset.login == true){
+    if (loginForm.dataset.login == 'true'){
       const response = await fetch('/api/users/login', {
         method: 'POST',
         body: JSON.stringify({ name, password }),
@@ -51,4 +51,4 @@ const logOrSign = (event) => {
 
 loginForm.addEventListener('submit', loginFormHandler);
 
-switcher.addEventListener('submit', logOrSign);
+switcher.addEventListener('click', logOrSign);

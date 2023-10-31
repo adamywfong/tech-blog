@@ -3,7 +3,7 @@
   <div class="card">
     <div class="card-header">
       <a class="card-title" href="/posts/{{post.id}}">{{post.title}}</a>
-      <p class="date">Posted by {{../.name}} on {{format_date post.createdAt}}</p>
+      <p class="date">{{format_date post.createdAt}}</p>
     </div>
     <div class="card-body">
       <p>{{post.text}}</p>
@@ -11,4 +11,4 @@
   </div>
   {{/each}}
 </div>
-<button class="btn btn-primary" id="createPost">Create Post</button>
+<button class="btn btn-primary" id="createPost">&#43 Create Post</button>
