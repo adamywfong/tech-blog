@@ -1,22 +1,24 @@
-<div class="card post">
-  <div class="card-header">
-    <h1>{{post.title}}</h1>
-    <p class="date">Posted by {{post.user.name}} on {{format_date post.createdAt}}</p>
+<div class="card border border-2 border-dark m-1">
+  <div class="bg-dark text-white card-header d-flex justify-content-between">
+    <p>{{post.title}}</p>
+    <p class="text-end">Posted by {{post.user.name}} on {{format_date post.createdAt}}</p>
   </div>
   <div class="card-body">
     {{post.text}}
   </div>
 </div>
 {{#each post.comments as |comment|}}
-<div class="card comment">
-  <p>{{comment.text}}</p>
-  <p>&#8212{{comment.user.name}}, {{format_date comment.createdAt}}</p>
+<div class="card border border-dark m-1 pt-4">
+  <p class="p-1 mx-1">{{comment.text}}</p>
+  <p class="p-1 mx-1">&#8212{{comment.user.name}}, {{format_date comment.createdAt}}</p>
 </div>
 {{/each}}
-<div class="mb-3">
-  <label for="comment-text" class="form-label">Comment</label>
-  <textarea class="form-control" id="comment-text" rows="3"></textarea>
-  <button class="btn btn-submit" data-postID="{{post.id}}" id="submit-comment">Submit</button>
+<div class="m-1 border rounded">
+  <label for="comment-text" class="form-label mx-2 my-1">Comment</label>
+  <textarea class="form-control border-primary-subtle border-3 m-1" id="comment-text" placeholder="Enter text here" rows="3"></textarea>
+  <div class="d-grid gap-1 my-1 mx-2">
+    <button class="btn btn-secondary" data-postID="{{post.id}}" id="submit-comment">Submit</button>
+  </div>
 </div>
 
 <script src="/js/comment.js"></script>

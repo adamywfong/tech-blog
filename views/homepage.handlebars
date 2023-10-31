@@ -1,9 +1,9 @@
 <div id="posts">
   {{#each posts as |post|}}
-  <div class="card">
-    <div class="card-header">
-      <a class="card-title" href="/comments/{{post.id}}">{{post.title}}</a>
-      <p class="date">Posted by {{post.user.name}} on {{format_date post.createdAt}}</p>
+  <div class="card border border-2 border-dark m-1">
+    <div class="bg-dark text-white card-header d-flex justify-content-between">
+      <a class="card-title text-decoration-none fw-bold" href="/comments/{{post.id}}">{{post.title}}</a>
+      <p>Posted by {{post.user.name}} on {{format_date post.createdAt}}</p>
     </div>
     <div class="card-body">
       <p>{{post.text}}</p>

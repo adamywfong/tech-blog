@@ -2,9 +2,9 @@
 const handleCommentSubmit = async (event) => {
   event.preventDefault();
   const text = document.querySelector('#comment-text').value.trim();
-  const post_id = document.querySelector('#submit-comment').dataset.postID;
+  const post_id = document.querySelector('#submit-comment').dataset.postid;
   if (text){
-    const response = await fetch('api/comments/', {
+    const response = await fetch('/api/comments/', {
       method: 'POST',
       body: JSON.stringify({text, post_id}),
       headers: {'Content-Type': 'application/json'}

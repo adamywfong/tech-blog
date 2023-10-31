@@ -41,10 +41,12 @@ const logOrSign = (event) => {
   if (loginForm.dataset.login == 'true') {
     loginForm.dataset.login = false;
     document.querySelector('#login-header').textContent = 'Sign Up';
+    document.querySelector('#loginButton').textContent = 'Sign Up';
     switcher.textContent = 'Login instead';
   }  else {
     loginForm.dataset.login = true;
     document.querySelector('#login-header').textContent = 'Login';
+    document.querySelector('#loginButton').textContent = 'Login';
     switcher.textContent = 'Sign up instead';
   }
 }
