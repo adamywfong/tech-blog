@@ -50,5 +50,4 @@ const logOrSign = (event) => {
 }
 
 loginForm.addEventListener('submit', loginFormHandler);
-
 switcher.addEventListener('click', logOrSign);
