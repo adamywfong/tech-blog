@@ -12,7 +12,7 @@ const postFormHandler = async (event) => {
       headers: {'Content-Type': 'application/json'},
     });
     if (response.ok) {
-      document.location.replace('/dashboard');
+      document.location.reload();
     } else {
       alert(response.statusText);
     }

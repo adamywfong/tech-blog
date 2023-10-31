@@ -1,4 +1,4 @@
-<div class = "card">
+<div class="card post">
   <div class="card-header">
     <h1>{{post.title}}</h1>
     <p class="date">Posted by {{post.user.name}} on {{format_date post.createdAt}}</p>
@@ -13,3 +13,10 @@
   <p>&#8212{{comment.user.name}}, {{format_date comment.createdAt}}</p>
 </div>
 {{/each}}
+<div class="mb-3">
+  <label for="comment-text" class="form-label">Comment</label>
+  <textarea class="form-control" id="comment-text" rows="3"></textarea>
+  <button class="btn btn-submit" data-postID="{{post.id}}" id="submit-comment">Submit</button>
+</div>
+
+<script src="/js/comment.js"></script>

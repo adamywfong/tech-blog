@@ -15,11 +15,8 @@
   {{#each user.posts as |post|}}
   <div class="card">
     <div class="card-header">
-      <a class="card-title" href="/posts/{{post.id}}">{{post.title}}</a>
+      <a class="card-title" href="/dashboard/{{post.id}}">{{post.title}}</a>
       <p class="date">{{format_date post.createdAt}}</p>
-    </div>
-    <div class="card-body">
-      <p>{{post.text}}</p>
     </div>
   </div>
   {{/each}}
