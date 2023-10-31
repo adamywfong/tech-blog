@@ -65,9 +65,29 @@ router.get('/dashboard', withAuth, async (req, res) => {
       logged_in: req.session.logged_in,
       userId: req.session.user_id
     })
-    } catch (err) {
-      res.status(500).json(err);
-    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
+});
+
+router.get('/dashboard/:id', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findOne({
+      where: 
+        {
+          id: req.params.id,
+          user_id: req.session.user_id,
+        }
+    });
+    const post = postData.get({ plain: true });
+    res.render('editor', {
+      title: 'Your Dashboard',
+      post,
+      logged_in: req.session.logged_in,
+    })
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
 
 router.get('/comments/:id', withAuth, async (req, res) => {
@@ -96,9 +116,9 @@ router.get('/comments/:id', withAuth, async (req, res) => {
       post,
       logged_in: req.session.logged_in
     })
-    } catch (err) {
-      res.status(500).json(err);
-    }
+  } catch (err) {
+    res.status(500).json(err);
+  }
 });
   
 module.exports = router;
