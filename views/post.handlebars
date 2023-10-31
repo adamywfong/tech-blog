@@ -1,0 +1,17 @@
+<div class = "card">
+  <div class="card-header">
+    <h1>{{post.title}}</h1>
+    <p class="date">Posted by {{post.user.name}} on {{format_date post.createdAt}}</p>
+  </div>
+  <div class="card-body">
+    {{post.text}}
+  </div>
+</div>
+{{#each post.comments as |comment|}}
+<div class="card comment">
+  {{comment.text}}
+  {{comment.createdAt}}
+  {{comment.user.name}}
+</div>
+{{/each}}
+
