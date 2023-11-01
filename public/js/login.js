@@ -3,7 +3,6 @@ const switcher = document.querySelector('#login-toggle');
 
 const loginFormHandler = async (event) => {
   event.preventDefault();
-
   // Collect values from the login form
   const name = document.querySelector('#name-login').value.trim();
   const password = document.querySelector('#password-login').value.trim();

@@ -6,7 +6,7 @@ This project was designed as a blog-style website where users are able to publis
 
 
 
-Link to site: [https://fierce-spire-82930-4aa67cc276ab.herokuapp.com/](https://fierce-spire-82930-4aa67cc276ab.herokuapp.com/)
+Link to site: [https://tech-talkers-e85792de0744.herokuapp.com/](https://tech-talkers-e85792de0744.herokuapp.com/)
 
 ## Usage
 
