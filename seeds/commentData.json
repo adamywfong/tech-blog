@@ -1,0 +1,42 @@
+[
+  {
+    "text": "I have no idea why you think this way",
+    "user_id": 2,
+    "post_id": 1
+  },
+  {
+    "text": "But it's so fun!",
+    "user_id": 1,
+    "post_id": 1
+  },
+  {
+    "text": "Wow you're really angry about this",
+    "user_id": 1,
+    "post_id": 2
+  },
+  {
+    "text": "I feel the same way too sometimes :(",
+    "user_id": 3,
+    "post_id": 2
+  },
+  {
+    "text": "Haha this is such a funny post",
+    "user_id": 2,
+    "post_id": 5
+  },
+  {
+    "text": "At least we can agree on something!",
+    "user_id": 1,
+    "post_id": 5
+  },
+  {
+    "text": "Comment on my post and I can tell you why I think it's the best :)",
+    "user_id": 1,
+    "post_id": 4
+  },
+  {
+    "text": "Can you explain what's so great about it?",
+    "user_id": 3,
+    "post_id": 1
+  }
+]

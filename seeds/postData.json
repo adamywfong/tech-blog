@@ -1,0 +1,27 @@
+[
+  {
+    "title": "MVC is for me!",
+    "text": "I really enjoy learning MVC. I think everyone should learn it",
+    "user_id": 1
+  },
+  {
+    "title": "MVC is not for me!",
+    "text": "How can anyone on earth enjoy this???",
+    "user_id": 2
+  },
+  {
+    "title": "Object Oriented Programming",
+    "text": "This sure is a cool topic",
+    "user_id": 1
+  },
+  {
+    "title": "Why is MVC important?",
+    "text": "I certainly can't figure out why...",
+    "user_id": 3
+  },
+  {
+    "title": "Can cats program?",
+    "text": "My cat keeps climbing onto my keyboard. Is it trying to tell me what I'm doing wrong?",
+    "user_id": 3
+  }
+]

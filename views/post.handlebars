@@ -1,7 +1,7 @@
 <div class="card border border-2 border-dark m-1">
   <div class="bg-dark text-white card-header d-flex justify-content-between">
-    <p>{{post.title}}</p>
-    <p class="text-end">Posted by {{post.user.name}} on {{format_date post.createdAt}}</p>
+    <p class="fw-bold mt-3">{{post.title}}</p>
+    <p class="text-end mt-3">Posted by {{post.user.name}} on {{format_date post.createdAt}}</p>
   </div>
   <div class="card-body">
     {{post.text}}
